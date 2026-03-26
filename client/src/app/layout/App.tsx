@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react"
+import type Product from "../models/product";
 
-interface Product {
-  name: string,
-  price: number
-}
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,7 +13,20 @@ function App() {
 
 
   const addProduct = () => {
-    setProducts(prevState => [...prevState, { name: 'product' + (prevState.length + 1), price: (prevState.length * 100) + 100 }])
+    setProducts(prevState => {
+      const product: Product = {
+        id: prevState.length + 1,
+        name: 'product' + (prevState.length + 1),
+        price: (prevState.length * 100) + 100,
+        description: 'test',
+        pictureUrl: 'https://picsum.photo/200',
+        type: 'test',
+        brand: 'test',
+        quantityInStock: 100
+      }
+
+      return [...prevState, product]
+    })
   }
 
   return (
