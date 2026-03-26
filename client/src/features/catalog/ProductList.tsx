@@ -18,7 +18,7 @@ export default function ProductList({ products }: Props) {
         }}
       >
         {products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </Box>
     </div>
