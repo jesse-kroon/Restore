@@ -15,7 +15,7 @@ builder.Services.AddCors();
 var app = builder.Build();
 app.UseCors(options =>
 {
-    options.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5173");
+    options.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:3000");
 });
 
 app.MapControllers();
