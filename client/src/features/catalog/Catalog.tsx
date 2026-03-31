@@ -3,10 +3,9 @@ import ProductList from './ProductList';
 
 type Props = {
   products: Product[];
-  addProduct: () => void;
 };
 
-export const Catalog = ({ products, addProduct }: Props) => {
+export const Catalog = ({ products }: Props) => {
   return (
     <>
       <ProductList products={products} />
